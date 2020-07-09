@@ -255,5 +255,12 @@ namespace Pleres
             pnlContent.Controls.Clear();
             //ShowUI();
         }
+
+        private void msiClients_Click(object sender, EventArgs e)
+        {
+            tblLayoutCenter.Visible = false;
+            HideTopUIBar();
+            activateChildForm(new Clients());
+        }
     }
 }

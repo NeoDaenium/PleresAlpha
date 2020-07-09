@@ -52,7 +52,7 @@
             this.tblPanel.ColumnCount = 3;
             this.tblPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.24234F));
             this.tblPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 92.75766F));
-            this.tblPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 17F));
+            this.tblPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
             this.tblPanel.Controls.Add(this.topPnl, 1, 0);
             this.tblPanel.Controls.Add(this.panel1, 1, 1);
             this.tblPanel.Location = new System.Drawing.Point(12, 12);
@@ -60,7 +60,7 @@
             this.tblPanel.RowCount = 2;
             this.tblPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.76037F));
             this.tblPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.23963F));
-            this.tblPanel.Size = new System.Drawing.Size(362, 427);
+            this.tblPanel.Size = new System.Drawing.Size(350, 427);
             this.tblPanel.TabIndex = 0;
             // 
             // topPnl
@@ -73,7 +73,7 @@
             this.topPnl.Controls.Add(this.label7);
             this.topPnl.Location = new System.Drawing.Point(27, 3);
             this.topPnl.Name = "topPnl";
-            this.topPnl.Size = new System.Drawing.Size(314, 232);
+            this.topPnl.Size = new System.Drawing.Size(301, 232);
             this.topPnl.TabIndex = 19;
             // 
             // txtUsername
@@ -127,7 +127,7 @@
             this.panel1.Controls.Add(this.lblValidation);
             this.panel1.Location = new System.Drawing.Point(27, 241);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(314, 183);
+            this.panel1.Size = new System.Drawing.Size(301, 183);
             this.panel1.TabIndex = 19;
             // 
             // btnLogin
@@ -182,7 +182,7 @@
             this.lblExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblExit.Font = new System.Drawing.Font("Saira", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExit.ForeColor = System.Drawing.Color.White;
-            this.lblExit.Location = new System.Drawing.Point(375, 1);
+            this.lblExit.Location = new System.Drawing.Point(363, 2);
             this.lblExit.MinimumSize = new System.Drawing.Size(24, 32);
             this.lblExit.Name = "lblExit";
             this.lblExit.Size = new System.Drawing.Size(39, 33);
@@ -197,7 +197,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.ClientSize = new System.Drawing.Size(413, 451);
+            this.ClientSize = new System.Drawing.Size(401, 451);
             this.ControlBox = false;
             this.Controls.Add(this.tblPanel);
             this.Controls.Add(this.lblExit);
