@@ -23,7 +23,6 @@ namespace Pleres.Classes
                 return $"{Firstname} {Lastname}";
             }
         }
-
         private string Dateadded { get; set; }
         private string Birthday { get; set; }
     }

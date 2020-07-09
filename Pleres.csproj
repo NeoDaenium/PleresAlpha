@@ -194,6 +194,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Forms\Components\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

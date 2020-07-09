@@ -7,28 +7,24 @@ using System.Windows.Forms;
 
 namespace Pleres.Forms
 {
-
-
     public partial class Login : Form
     {
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
-
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        public static extern bool ReleaseCapture();
-
+        public String loggedInUser = "Noone";
+        public MainForm mainfrm;
+        public int userID;
         private int tries;
         private List<UserModel> Usernames = new List<UserModel>();
-        private SqliteDataAccess dataAccess = new SqliteDataAccess();
+
         public Login()
         {
             InitializeComponent();
             tries = 0;
+            
         }
-
-
+        public MainForm releaseUsername()
+        {
+            return mainfrm;
+        }
 
         private void validate()
         {   //Check if Empty
@@ -39,13 +35,15 @@ namespace Pleres.Forms
             }
             else//If not empty
             {
-                if(dataAccess.ValidateUser(txtUsername.Text, txtPassword.Text))
+                if(SqliteDataAccess.AuthenticateUser(txtUsername.Text, txtPassword.Text))
                 {
                     lblValidation.Visible = true;
                     lblValidation.Text = "You're the developer you cool cat you!";
-                    MainForm mainfrm = new MainForm();
-                    mainfrm.ShowDialog();
-                    this.Close();
+                    mainfrm = new MainForm(txtUsername.Text);
+                    this.DialogResult = DialogResult.OK;
+                    //this.Close();
+                    //Application.Run(new MainForm(txtUsername.Text));
+
                 }
                 else
                 {
@@ -61,13 +59,14 @@ namespace Pleres.Forms
 
         public void loadUsers()
         {
-
-            Usernames = SqliteDataAccess.GetUsers();
+            Usernames = SqliteDataAccess.GetLoginData();
         }
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             validate();
+            //txtUsername.Text = PleresSecurity.Season(txtPassword.Text);
+            //btnLogin.Text = PleresSecurity.CompareHash(txtPassword.Text,PleresSecurity.WriteUid(),txtUsername.Text).ToString();
         }
 
         private void LblExit_Click(object sender, EventArgs e)
@@ -79,8 +78,8 @@ namespace Pleres.Forms
         {
             if (e.Button == MouseButtons.Left)
             {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+                WindowSettings.ReleaseCapture();
+                WindowSettings.SendMessage(Handle, WindowSettings.WM_NCLBUTTONDOWN, WindowSettings.HT_CAPTION, 0);
             }
         }
     }
